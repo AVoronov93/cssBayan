@@ -1,0 +1,85 @@
+html {
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+  overflow-y: scroll;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 600px;
+}
+
+button {
+  width: 100%;
+  display: flex;
+  border: 0;
+  justify-content: space-between;
+  background-color: inherit;
+}
+
+.acc-small-container {
+  border-top: 2px solid grey;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button:focus ~ img,
+button:hover ~ img {
+  height: auto;
+  padding: 1rem;
+  width: 600px;
+  transition: all 0.4s ease;
+}
+
+img {
+  height: 0;
+  padding: 1rem;
+  width: 0;
+  transition: all 0.4s ease;
+}
+
+@media (max-width: 321px) {
+  html {
+    margin: 0;
+  }
+
+  body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  button:focus ~ img {
+    width: 100%;
+  }
+}
+
+@media (max-width: 821px) {
+  html {
+    margin: 0;
+  }
+
+  body {
+    width: 80%;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  button:focus ~ img {
+    width: 80%;
+  }
+}
+
+@media (min-width: 821px) {
+  .acc-container:hover > * > button::after {
+    content: "+";
+  }
+
+  .acc-container:hover > * > button:focus::after {
+    content: "x";
+  }
+}
